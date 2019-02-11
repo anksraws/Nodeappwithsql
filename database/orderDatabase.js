@@ -32,3 +32,14 @@ module.exports.enterOrder = (req, res) =>{
     })
 
 }
+
+module.exports.fullDetail = (req, res) => {
+	var user_id = req.decode.userId;
+    var sql = `SELECT user.name AS name, restaurant.order_food AS food_ordered FROM user JOIN restaurant ON user.user_id = restaurant.customer_id where user_id = "${user_id}"`;
+    con.query(sql, (err, result) => {
+    	if(err) throw err;
+    	else{
+    		res.send(result);
+    	}
+    })
+}

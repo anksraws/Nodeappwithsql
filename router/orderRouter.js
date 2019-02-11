@@ -8,5 +8,6 @@ const orders = require('./../database/orderDatabase')
 
 router.put('/updateOrder/:id', orders.updateOrder);
 router.post('/enter', authenticate, orders.enterOrder);
+router.get('/detail', authenticate, orders.fullDetail);
 
 module.exports = router
