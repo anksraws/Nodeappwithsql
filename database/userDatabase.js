@@ -56,6 +56,7 @@ module.exports.login = (req, res) => {
    res.status(404).send();
   }
   var hash = (result[0].password).toString();
+  var userId = (result[0].user_id).toString();
   bcrypt.compare(password, hash, (err, result) => {
    if (result == false) {
     res.status(404).send();

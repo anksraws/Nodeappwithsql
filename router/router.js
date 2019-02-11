@@ -10,6 +10,5 @@ router.post('/signup',validator, user.signup);
 router.post('/login',validator, user.login );
 router.get('/details',authenticate, user.details);
 router.post('/order',authenticate, user.order);
-router.put('/updateOrder/:id',order.updateOrder);
 
 module.exports = router
